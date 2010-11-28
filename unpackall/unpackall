@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
+# This is a part of 'dailyscripts' bundle.
 # 'unpackall' looks for archives in given path and extracts them.
-# Copyright (C) 2010, Tomas Varaneckas
+# Copyright (C) 2010, Tomas Varaneckas 
+# http://www.varaneckas.com
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -51,6 +53,8 @@ class UnpackAll(object):
     
     def main(self, argv):
         args = list(argv)
+        if '--help' in args or '-h' in args:
+            print 'Usage: unpackall [--delete] [path]'
         if '--delete' in args:
             self.delete = True
             args.remove('--delete')
