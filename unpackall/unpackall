@@ -58,6 +58,8 @@ class UnpackAll(object):
         if '--delete' in args:
             self.delete = True
             args.remove('--delete')
+        else:
+            self.delete = False
         self.argv = args
         self.handler_factory = HandlerFactory()    
         if len(self.argv) > 1:
