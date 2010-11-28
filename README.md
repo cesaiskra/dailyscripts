@@ -3,6 +3,11 @@ Daily Scripts
 
 Helpful stuff for daily life.
 
+installation
+------------
+ 
+  sudo easy_install dailyscripts
+
 unpackall
 ---------
 
