@@ -19,6 +19,8 @@ class HandlerFactory(object):
 adding new archive types. This class tries to solve it."""
 
     def __init__(self):
+        """Registers archive handlers and handler mappings to arvhive \
+files."""
         self.handlers = {
             'unrar' : 'unrar x -y %s',
             'unzip' : 'unzip %s',
@@ -31,16 +33,21 @@ adding new archive types. This class tries to solve it."""
         }
 
     def get_handler(self, file_name):
+        """Analyzes given file and if it's possible to handle, returns \
+a new instance of an appropriate ArchiveHandler."""
         basename, ext = os.path.splitext(file_name)
         if ext in self.handler_map.keys():
             return ArchiveHandler(self.handlers[self.handler_map[ext]])
 
 class ArchiveHandler(object):
+    """Handles archives by invoking appropriate system command for unpacking \
+them."""
     
     def __init__(self, command):
         self.command = command
 
     def unpack(self, file, dir):
+        """Unpacks the given file in given directory."""
         cmd = self.command.split(' ')
         cmd[cmd.index('%s')] = file
         print 'Unpacking %s with %s' % (file, cmd[0])
@@ -50,11 +57,13 @@ class ArchiveHandler(object):
         return True
 
 class UnpackAll(object):
-    
+    """Main 'unpackall' program. Glues up the logic."""
     def main(self, argv):
+        """ Main method for 'unpackall' program."""
         args = list(argv)
         if '--help' in args or '-h' in args:
             print 'Usage: unpackall [--delete] [path]'
+            sys.exit(0)
         if '--delete' in args:
             self.delete = True
             args.remove('--delete')
