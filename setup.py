@@ -1,4 +1,12 @@
-#!/usr/bin/env python try: from setuptools import setup, find_packages except ImportError: from ez_setup import use_setuptools use_setuptools() from setuptools import setup, find_packages setup( name = 'dailyscripts',
+#!/usr/bin/env python 
+try: 
+    from setuptools import setup, find_packages 
+except ImportError: 
+    from ez_setup import use_setuptools 
+    use_setuptools() 
+    from setuptools import setup, find_packages 
+
+setup( name = 'dailyscripts',
     version = '0.0.3',
     scripts = ['unpackall/unpackall', 'shuffle/shuffle'],
 
@@ -12,7 +20,7 @@
     description = 'Daily Scripts. Utilities for every geek.',
     long_description = 'Daily Scripts. Utilities for every geek.',
     license = 'GPLv3',
-    keywords = ['utils']
+    keywords = ['utils'],
     classifiers = [
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
