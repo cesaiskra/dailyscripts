@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
-# This program adds a random prefix to files in a directory.
-# If a prefix already exists, it changes it.
+# This is a part of 'dailyscripts' bundle.
+# 'shuffle' restructures files in a foder by giving them a 
+# prefix with random sequence number, so file order changes. 
+# If prefix already exists, it's changed.
 
 # Why the hell someone would need a program like that?
 # The answer is simple. There are certain car audio players
@@ -10,17 +12,25 @@
 # so I want them to get shuffled by having a different random 
 # prefix from time to time. 
 
+# Copyright (C) 2010, Tomas Varaneckas 
+# http://www.varaneckas.com
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
 import os
 import sys
 import random
 import re
 
-class RandomPrefix(object):
+class Shuffle(object):
 
     def main(self, argv):
         args = list(argv)
         if '--help' in args or '-h' in args:
-            print 'Usage: randomprefix [path]'
+            print 'Usage: shuffle [path]'
             sys.exit(0)
 
         if len(argv) > 1:
@@ -54,5 +64,5 @@ class RandomPrefix(object):
         print 'Done!'
 
 if __name__ == '__main__':
-    program = RandomPrefix()
+    program = Shuffle()
     program.main(sys.argv)

@@ -16,4 +16,11 @@ and extracts them.
 
   Usage: unpackall [--delete] [path]
 
+shuffle
+-------
+
+Resequences files in given directory by adding or changing a numeric name 
+prefix.
+
+  Usage: shuffle [path]
 
