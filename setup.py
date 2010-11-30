@@ -8,7 +8,7 @@ except ImportError:
 
 setup( name = 'dailyscripts',
     version = '0.0.3',
-    scripts = ['unpackall/unpackall', 'shuffle/shuffle'],
+    scripts = ['filesystem/unpackall', 'filesystem/shuffle'],
 
     zip_safe = True,
 
