@@ -43,7 +43,7 @@ class Shuffle(object):
         files_and_dirs = os.listdir(self.path)
         files = list()
         for file in files_and_dirs:
-            if os.path.isfile(target_dir + os.path.sep + file):
+            if os.path.isfile(target_dir + os.path.sep + file) and not file.startswith('.'):
                 files.append(file)
         print 'Are you sure you want to add random prefixes to following files?'
         print ', '.join(files)
