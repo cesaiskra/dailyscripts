@@ -7,8 +7,12 @@ except ImportError:
     from setuptools import setup, find_packages 
 
 setup( name = 'dailyscripts',
-    version = '0.0.3',
-    scripts = ['filesystem/unpackall', 'filesystem/shuffle'],
+    version = '0.0.4',
+    scripts = [
+        'filesystem/unpackall', 
+        'filesystem/shuffle',
+        'filesystem/flatten'
+    ],
 
     zip_safe = True,
 

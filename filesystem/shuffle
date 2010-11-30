@@ -40,6 +40,9 @@ class Shuffle(object):
         rand = random.Random()
         rand.seed()
         target_dir = os.path.abspath(self.path)
+        if not os.path.exists(target_dir):
+            print 'Target directory does not exist: %s' % target_dir
+            sys.exit(1)
         files_and_dirs = os.listdir(self.path)
         files = list()
         for file in files_and_dirs:

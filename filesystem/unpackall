@@ -2,6 +2,7 @@
 
 # This is a part of 'dailyscripts' bundle.
 # 'unpackall' looks for archives in given path and extracts them.
+
 # Copyright (C) 2010, Tomas Varaneckas 
 # http://www.varaneckas.com
 
@@ -75,6 +76,10 @@ class UnpackAll(object):
             target_dir = argv.pop()
         else:
             target_dir = os.curdir
+
+        if not os.path.exists(os.path.abspath(target_dir)):
+            print 'Target directory does not exist: %s' % target_dir
+            sys.exit(1)
         print 'Recursively unpacking everything in %s' % target_dir
         self.unpack_dir(os.path.abspath(target_dir))
         print 'Done.'
