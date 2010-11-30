@@ -47,6 +47,8 @@ class Flatten(object):
             old_file = dir + os.path.sep + file
             new_file = top + os.path.sep + file
             if os.path.isdir(old_file):
+                if file.startswith('.'):
+                    continue
                 if depth > 0:
                     self.process_dir(old_file, top, depth - 1)
             else:
