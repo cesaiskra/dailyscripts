@@ -24,3 +24,8 @@ prefix.
 
   Usage: shuffle [path]
 
+flatten
+-------
+
+Flattens file hierarchy in given path by moving all files from subdirectories 
+up to path root.
